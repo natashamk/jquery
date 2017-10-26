@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div#forms{
+            height: 360px;
+            width:200px;
+            display: inline-block;
+            padding: 15px;
+        }
+        div.form{
+            display: inline-block;
+            width: 200px;
+            padding: 10px;
+        }
+        input.description{
+            width: 200px;
+            height: 140px;
+        } 
+        input{
+            margin-top:5px;
+            margin-bottom: 5px;
+        }
+        button{
+            margin-left: 15px;
+        }
+        div#cards{
+           height: 360px;
+            width:250px;
+            display: inline-block; 
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(document).on("button", "click")
+            $("button").click(function(){
+            first = $(".first").val();
+            last = $(".last").val();
+            desc = $(".description").val();
+            $("#cards").append("<h3>" + first + "" + last + "</h3>" + "<a target='#'>" + "Click for descreption" + "</a>")
+            $("#cards a").on("click");
+            $("a").click(function(){
+            $("#cards").html(desc);
+            });
+        });
+        });
+    </script>
+</head>
+<body>
+    <div id="forms">
+    <form>
+        First Name:<input class="first">
+        <br>
+        Last Name:<input class="last">
+        <br>
+        Description:<input class="description">
+    </form>
+    <br>
+    <button>Add User</button>
+    </div>
+    <div id="cards">
+
+    </div>
+</body>
+</html>
